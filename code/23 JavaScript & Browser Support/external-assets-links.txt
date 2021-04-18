@@ -1,0 +1,12 @@
+
+441 Babel-Docs
+https://babeljs.io/docs/en/
+
+441 babel-loader-Docs
+https://github.com/babel/babel-loader
+
+441 -babel-preset-env-Docs
+https://babeljs.io/docs/en/babel-preset-env
+
+441 browserslist-Config-Options
+https://github.com/browserslist/browserslist#full-list

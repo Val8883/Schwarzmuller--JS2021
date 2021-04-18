@@ -1,0 +1,68 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>495 NodeJS Error Handling</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>The finished code of this section will crash if you try to visit <strong>/my-place/:id</strong> with an invalid ID (that can't be converted to the special MongoDB&nbsp;ObjectId type).</p><p>You can of course add error handling in a similar way as you learned it before in the course:</p><ul><li><p><code>try-catch</code> for synchronous code (or <code>async</code>/&nbsp;<code>await</code>)</p></li><li><p><code>then()</code> /&nbsp;<code>catch()</code>&nbsp;for promise-based code (where you don't use <code>async</code>/&nbsp;<code>await</code>)</p></li></ul><p>Example:</p><pre class="prettyprint linenums">router.get('/location/:lid',&nbsp;(req,&nbsp;res,&nbsp;next)&nbsp;=&gt;&nbsp;{
+&nbsp;&nbsp;const&nbsp;locationId&nbsp;=&nbsp;req.params.lid;
+
+&nbsp;&nbsp;client.connect(function(err,&nbsp;client)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;db&nbsp;=&nbsp;client.db('locations');
+
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Insert&nbsp;a&nbsp;single&nbsp;document
+&nbsp;&nbsp;&nbsp;&nbsp;db.collection('user-locations').findOne(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_id:&nbsp;new&nbsp;mongodb.ObjectId(locationId)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(err,&nbsp;doc)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;if&nbsp;(err)&nbsp;{}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!doc)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;res.status(404).json({&nbsp;message:&nbsp;'Not&nbsp;found!'&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.json({&nbsp;address:&nbsp;doc.address,&nbsp;coordinates:&nbsp;doc.coords&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;});
+});</pre><p>can be improved like this:</p><pre class="prettyprint linenums">router.get('/location/:lid',&nbsp;(req,&nbsp;res,&nbsp;next)&nbsp;=&gt;&nbsp;{
+&nbsp;&nbsp;const&nbsp;locationId&nbsp;=&nbsp;req.params.lid;
+
+&nbsp;&nbsp;client.connect(function(err,&nbsp;client)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;db&nbsp;=&nbsp;client.db('locations');
+    
+    //&nbsp;THIS&nbsp;WAS&nbsp;ADDED
+    let locationId;
+    try {
+        locationId =&nbsp;new&nbsp;mongodb.ObjectId(locationId);
+    } catch (error)&nbsp;{
+        // return to make sure the other code does not execute
+        return res.status(500).json({message:&nbsp;'Invalid id!'}); 
+    }
+    //&nbsp;END&nbsp;OF&nbsp;ADDED&nbsp;CODE
+
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Insert&nbsp;a&nbsp;single&nbsp;document
+&nbsp;&nbsp;&nbsp;&nbsp;db.collection('user-locations').findOne(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_id:&nbsp;locationId // will only be reached if the above code didn't throw an error
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(err,&nbsp;doc)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;if&nbsp;(err)&nbsp;{}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!doc)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;res.status(404).json({&nbsp;message:&nbsp;'Not&nbsp;found!'&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.json({&nbsp;address:&nbsp;doc.address,&nbsp;coordinates:&nbsp;doc.coords&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;});
+});</pre><p>I dive deeper into more generic NodeJS&nbsp;error handling in my "NodeJS&nbsp;- The Complete Guide" course but the important takeaway here is, that you have the same error handling tools as in browser-side JavaScript.</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

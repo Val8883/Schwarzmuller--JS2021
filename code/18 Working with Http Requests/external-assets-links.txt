@@ -1,0 +1,6 @@
+
+368 JSONPlaceholder
+https://jsonplaceholder.typicode.com
+
+378 Dive-deeper-into-XMLHttpRequest
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest

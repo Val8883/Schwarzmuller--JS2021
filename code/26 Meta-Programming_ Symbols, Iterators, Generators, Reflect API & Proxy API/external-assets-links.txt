@@ -1,0 +1,9 @@
+
+473 Reflect-API-vs-Object-API
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/Comparing_Reflect_and_Object_methods
+
+474 Proxy-API-A-Full-List-of-Available-Traps
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#A_complete_traps_list_example
+
+475 Full-List-of-Proxy-API-Traps
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#A_complete_traps_list_example

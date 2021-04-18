@@ -1,0 +1,9 @@
+
+518 Google-Performance-Docs
+https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution
+
+518 Chrome-DevTools-Performance-Tab-Docs
+https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference
+
+525 Diving-Deeper-Into-Memory-Analysis
+https://developers.google.com/web/tools/chrome-devtools/memory-problems

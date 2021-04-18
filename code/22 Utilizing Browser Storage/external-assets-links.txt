@@ -1,0 +1,12 @@
+
+430 More-on-Cookies
+https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+
+431 IndexedDB-Docs-MDN-
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+
+432 More-on-IndexedDB-MDN-
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+
+432 idb.js-Promise-based-IndexedDB-Third-party-Library-
+https://github.com/jakearchibald/idb

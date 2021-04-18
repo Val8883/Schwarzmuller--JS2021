@@ -1,0 +1,6 @@
+
+488 Rendering-Dynamic-HTML-Pages-with-EJS
+https://ejs.co/
+
+491 More-on-CORS-Headers
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

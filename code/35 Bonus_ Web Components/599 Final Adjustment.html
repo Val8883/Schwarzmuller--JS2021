@@ -1,0 +1,20 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>599 Final Adjustment</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>There is one final adjustment we can quickly make in our <code>Tooltip</code> component (<code>tooltip.js</code> file).</p><p>In the <code>connectedCallback()</code>, remove this line:</p><pre class="prettyprint linenums">this.style.position =&nbsp;'relative';</pre><p>And instead, add the following style in the shadow DOM&nbsp;(i.e. in the template of the component, next to the other component styles we defined):</p><pre class="prettyprint linenums">:host {
+    position:&nbsp;relative;
+}</pre></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

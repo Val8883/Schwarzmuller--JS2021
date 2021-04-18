@@ -1,0 +1,9 @@
+
+530 Written-Article
+https://academind.com/learn/javascript/javascript-testing-introduction/
+
+536 More-Testing-with-Spies-Stubs-Mocks
+https://www.harrymt.com/blog/2018/04/11/stubs-spies-and-mocks-in-js.html
+
+536 Official-Jest-Docs
+https://jestjs.io/docs/en/getting-started

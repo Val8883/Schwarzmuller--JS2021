@@ -1,0 +1,25 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>032 _Shadowed Variables_</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>You learned about local ("function-internal") variables and global variables.</p><p>What happens if you have this code?</p><pre class="prettyprint linenums">let userName =&nbsp;'Max';
+function greetUser(name)&nbsp;{
+  let userName =&nbsp;name;
+  alert(userName);
+}
+userName =&nbsp;'Manu';
+greetUser('Max');</pre><p>This <strong>will actually show</strong> an alert that says <code>'Max'</code>&nbsp;(NOT&nbsp;<code>'Manu'</code>).</p><p>You might've expected that an error gets thrown because we use and declare <code>userName</code> more than once - and as you learned, that is not allowed.</p><p>It indeed is <strong>not allowed on the same level/ in the same scope.</strong></p><p>So this would fail:</p><pre class="prettyprint linenums">let userName =&nbsp;'Max';
+let userName = 'Manu';</pre><p>Why does it work in the first code snippet though?</p><p>Because we first create a global variable <code>userName</code> via</p><pre class="prettyprint linenums">let userName =&nbsp;'Max';</pre><p>But then we never re-declare that on the global level (that would not be allowed).</p><p>We only declare another variable inside of the function. But since variables in functions get their <strong>own scope</strong>, JavaScript does something which is called <strong>"shadowing"</strong>. </p><p>It <strong>creates a new variable on a different scop</strong>e - this variables does not overwrite or remove the global variable by the way - <strong>both</strong> <strong>co-exist</strong>.</p><p>When referring to <code>userName</code> inside of the <code>greetUser</code> function we now <strong>always refer to the local, shadowed variable</strong>. Only <strong>if no such local variable existed</strong>, JavaScript would <strong>fall back to the global variable</strong>.</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

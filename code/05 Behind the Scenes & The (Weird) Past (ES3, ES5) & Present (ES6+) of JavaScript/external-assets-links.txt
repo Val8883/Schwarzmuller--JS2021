@@ -1,0 +1,15 @@
+
+115 Strict-Mode-Changes
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#Changes_in_strict_mode
+
+116 Understanding-the-V8-Chrome-JS-Engine-Works
+https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef
+
+116 Understanding-the-SpiderMonkey-Mozilla-Firefox-Engine
+https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Internals
+
+120 More-on-JavaScript-Memory-Management-Garbage-Collection-
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
+
+120 V8s-Garbage-Collection-Logic
+https://v8.dev/blog/free-garbage-collection

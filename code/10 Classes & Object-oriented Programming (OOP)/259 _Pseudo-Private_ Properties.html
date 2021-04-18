@@ -1,0 +1,31 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>259 _Pseudo-Private_ Properties</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>The addition of private fields and properties is <strong>relatively new</strong> - in the past, such a feature was not part of JavaScript.</p><p>Hence you might find many scripts that use a concept which you could describe as <strong>"pseudo-private"&nbsp;properties</strong>.</p><p><strong>It would look like this:</strong></p><pre class="prettyprint linenums">class User {
+    constructor() {
+        this._role =&nbsp;'admin';
+    }
+}
+
+//&nbsp;or directly in an object
+
+const product =&nbsp;{
+    _internalId:&nbsp;'abc1'
+};</pre><p><strong>What's that?</strong></p><p>It's a quite common convention to prefix private properties with an underscore (<code>_</code>) to signal that they should not be accessed from outside of the object.</p><p><strong>Important:</strong>&nbsp;It's <strong>just a convention</strong> that should signal something!&nbsp;It does <strong>NOT technically prevent</strong> access. You <strong>CAN</strong> run this code without errors for example:</p><pre class="prettyprint linenums">const product =&nbsp;{
+    _internalId:&nbsp;'abc1'
+};
+console.log(product._internalId);&nbsp;// works!</pre><p>It's really just a hint that developers should respect. It's not as strict as the "real" private properties introduced recently (<code>#propertyName</code>).</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

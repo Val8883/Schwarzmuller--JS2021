@@ -1,0 +1,24 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>045 Objects - Common Syntax Gotchas</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>You learned the correct syntax for creating an object in the last lecture:</p><pre class="prettyprint linenums">const user =&nbsp;{
+    name:&nbsp;'Max',
+    age: 30
+};</pre><p>A couple of important things:</p><ol><li><p>You use <code>{}</code> to "group the data" - a semicolon (<code>;</code>) is used after the closing <code>}</code>. On functions, we didn't do that. As a rule of thumb, you can keep in mind that <strong>a semicolon is used after </strong><code><strong>{}</strong></code><strong> if the </strong><code><strong>{}</strong></code><strong> are on the right side of the equal sign</strong>!</p></li><li><p>key-value pairs are <strong>separated via a comma</strong> (<code>,</code>), <strong>NOT</strong> via a semicolon. Using a semicolon inside of an object (i.e. between <code>{}</code>), would be a <strong>syntax error</strong>!</p></li><li><p>Values are assigned to keys/&nbsp;properties <strong>via a colon</strong> (<code>:</code>), NOT via an equal sign (<code>=</code>). Using an equal sign inside of an object (i.e. between <code>{}</code>), would be a <strong>syntax error</strong>!</p></li></ol><p>I.e. this would be WRONG and would throw an error:</p><pre class="prettyprint linenums">const worstPossibleUser =&nbsp;{
+    name =&nbsp;'Max';
+    age = 30;
+};</pre></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                
