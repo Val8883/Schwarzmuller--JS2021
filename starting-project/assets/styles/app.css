@@ -3,11 +3,12 @@
 }
 
 html {
-  font-family: 'Roboto', open-sans;
+  font-family: "Roboto", open-sans;
 }
 
 body {
   margin: 0;
+  background: darkslategray;
 }
 
 header {
@@ -38,12 +39,13 @@ header {
   font: inherit;
   font-size: 3rem;
   border: 2px solid #023d6d;
-  width: 10rem;
+  width: 100%;
   padding: 0.15rem;
-  margin: auto;
+  margin: 0 auto;
   display: block;
   color: #023d6d;
   text-align: center;
+  border-radius: 0.1em;
 }
 
 #calculator input:focus {
@@ -71,9 +73,11 @@ header {
 
 #calc-actions button {
   width: 4rem;
+  margin: 2px;
 }
 
 #calc-actions {
+  display: flex;
   margin-top: 1rem;
   text-align: center;
 }
